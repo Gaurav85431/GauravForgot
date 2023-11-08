@@ -56,7 +56,7 @@ get_route.post('/updateData', upload.single('images'), product_controller.update
 get_route.post('/deleteData/:id', product_controller.deleteproduct);
 get_route.get('/getImages/:image', product_controller.getimage);
 get_route.get('/getUser', user_controller.getuser);
-get_route.post('/change-password/:token', auth, user_controller.resetpassword);
+get_route.post('/change-password/', auth, user_controller.resetpassword);
 get_route.post('/logout/:token', auth, user_controller.logoutAllDevice);
 get_route.post('/logoutOne/:token', auth, user_controller.logout);
 get_route.post('/forgot-password', user_controller.forget_password);

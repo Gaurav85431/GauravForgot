@@ -324,7 +324,7 @@ const resetpassword = async (req, res) => {
                     /** mylogic end  */
                     const userdata = await user.findByIdAndUpdate({ _id: tokenData._id }, { $set: { password: newpassword } }, { new: true })
 
-                    res.status(200).send({ success: false, msg: "User password has been reset", data: userdata });
+                    res.status(200).send({ success: true, msg: "User password has been reset", data: userdata });
                 }
                 else {
                     res.status(200).send({ success: false, msg: "newPassword and confirmPassword didn't match" });

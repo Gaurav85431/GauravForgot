@@ -7,7 +7,7 @@ app.use(cors());
 
 const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://127.0.0.1:27017/sauravPW')
+mongoose.connect('mongodb://127.0.0.1:27017/sauravPW')
 
 
 // routes 
@@ -21,7 +21,7 @@ app.listen(3000, function () {
 })
 
 
-
+/*
 const PORT = 8000;
 const DB = "mongodb+srv://Gaurav:eP2ILjAadWqdYhMda@gaurav.hxxlayo.mongodb.net/?retryWrites=true&w=majority";
 
@@ -38,3 +38,4 @@ mongoose.connect(DB)
     });
 
 
+*/
