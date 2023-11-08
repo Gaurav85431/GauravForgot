@@ -324,7 +324,7 @@ const resetpassword = async (req, res) => {
                     /** mylogic end  */
                     const userdata = await user.findByIdAndUpdate({ _id: tokenData._id }, { $set: { password: newpassword } }, { new: true })
 
-                    res.status(200).send({ success: true, msg: "User password has been reset", data: userdata });
+                    res.status(200).send({ success: true, msg: "User password has been changed", data: userdata });
                 }
                 else {
                     res.status(200).send({ success: false, msg: "newPassword and confirmPassword didn't match" });
@@ -365,8 +365,8 @@ const sendresetpasswordmail = async (username, email, token) => {
             from: config.emailUser,
             to: email,
             subject: 'For reset password',
-            // html: '<p> Hii ' + username + ', please click the link <a href= "https://gauravslonexpwd.onrender.com/api/resetpassword"> and reset your password </a>'
-            html: '<p> Hii ' + username + ', please click the link <a href= "http://127.0.0.1:3000/api/resetpassword"> and reset your password </a>'
+            html: '<p> Hii ' + username + ', please click the link <a href= "https://gauravnew.onrender.com/api/resetpassword"> and reset your password </a>'
+            // html: '<p> Hii ' + username + ', please click the link <a href= "http://127.0.0.1:3000/api/resetpassword"> and reset your password </a>'
         }
 
         transporter.sendMail(mailOption, function (error, info) {
@@ -375,7 +375,7 @@ const sendresetpasswordmail = async (username, email, token) => {
 
             }
             else {
-                console.log("Mail has been sent : ", info.response);
+                console.log("Mail has been sent  check: ", info.response);
             }
         });
 
